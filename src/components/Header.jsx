@@ -1,4 +1,4 @@
-import '/header.css';
+import '../styles/Header.css';
 
 import Nav from './Nav';
 

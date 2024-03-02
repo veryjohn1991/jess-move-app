@@ -8,7 +8,7 @@ import App from './App';
 import Error from './pages/Error';
 import Home from './pages/Home';
 import Signin from './pages/Signin';
-import Query from './components/Query';
+import Query from './pages/Query';
 
 
 

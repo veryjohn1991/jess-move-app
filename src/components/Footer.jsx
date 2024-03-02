@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import './footer.css'
+import '../styles/Footer.css'
 
 
 const Footer = () => {

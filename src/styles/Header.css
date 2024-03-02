@@ -1,0 +1,14 @@
+header {
+    background-color: #768948 ;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+  
+
+.nav{
+  width: 50%;
+
+}
