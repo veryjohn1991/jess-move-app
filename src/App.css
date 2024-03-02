@@ -1,0 +1,46 @@
+@keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+  
+  .card-body {
+    background-color: hsl(55, 68%, 27%);
+    margin-top: 10px;
+    color: ivory;
+  }
+  p {
+    text-align: center;
+    padding: 30px;
+  }
+  .body {
+    background-color:#abb2ba;
+    padding: 30px;
+  
+  
+  }
+  .footer-container {
+    background-color: rgb(#565656);
+    padding: 0px;
+  }
+  .form-control {
+    background-color: rgb(36, 36, 32);
+    color: white;
+  }
+  .btn-primary {
+    background-color: #768948 ;
+  }
+  
+  card-group {
+    align-content: center;
+  }
+  
