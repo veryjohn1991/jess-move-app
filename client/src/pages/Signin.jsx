@@ -18,7 +18,7 @@ function Signin() {
         const inputType = target.name;
         const inputValue = target.value;
 
-        if (inputType === "userName") {
+        if (inputType === "username") {
             setUserName(inputValue);
         } else {
             setPassword(inputValue);
