@@ -1,58 +1,66 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { SIGNIN_USER } from '../utils/mutations';
 
-
-import { checkPassword } from '../utils/helpers';
-
-function Signin() {
-
-    const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");
-    const [errorMessage, setErrorMessage] = useState("");
+import Auth from '../utils/auth';
 
 
 
 
-    const handleInputChange = (e) => {
+const Signin = (props) => {
 
-        const { target } = e;
-        const inputType = target.name;
-        const inputValue = target.value;
+    const [formState, setFormState] = useState({password},"")
+    const [signin, {error, data}] = useMutation(SIGNIN_USER);
 
-        if (inputType === "userName") {
-            setUserName(inputValue);
-        } else {
-            setPassword(inputValue);
 
-        }
+
+
+    const handleInputChange = (event) => {
+
+        const { name, value } = event.target;
+       
+
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
     };
+        
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (event) => {
 
-        e.preventDefault();
+        event.preventDefault();
+        console.log(formState);
+        try {
+            const {data} = await Login({
+                variables: {...formState},
+            });
 
-        if (userName === "") {
-            setErrorMessage("Name is invalid!");
-
-            return;
+            Auth.login(data.login.token);
+        } catch (e) {
+          console.error(e);
         }
-        if (!checkPassword(password)) {
-            setErrorMessage('Choose a more secure password ');
-            return;
-        }
-        setUserName('');
-        setPassword('');
 
-    };
-
+        setFormState({
+            password: '',
+          });
+    
+        };
+       
     return (
 
         <div className="container text-center">
             <h1>Sign In</h1>
-
+            {data ? (
+                <p>Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+                </p>
+            ) : (
             <form className="form" onSubmit={handleFormSubmit}>
                 <label className="user_input-tag">Name</label>
                 <input
-                    value={userName}
+                    value={formState.userName}
                     name="userName"
                     onChange={handleInputChange}
                     type="text"
@@ -61,7 +69,7 @@ function Signin() {
                 <br></br>
                 <label className="user_input-tag">Password</label>
                 <input
-                    value={password}
+                    value={formState.password}
                     name="password"
                     onChange={handleInputChange}
                     type="password"
@@ -70,6 +78,8 @@ function Signin() {
                 <br></br>
                 <button type="submit">Submit</button>
             </form>
+            )}
+            
             {errorMessage && (
                 <div>
                     <p className="error-text">{errorMessage}</p>
