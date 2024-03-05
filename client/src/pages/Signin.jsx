@@ -56,7 +56,7 @@ function Signin() {
                     name="username"
                     onChange={handleInputChange}
                     type="text"
-                    placeholder="enter your name"
+                    placeholder="Enter your name"
                 />
                 <br></br>
                 <label className="user_input-tag">Password</label>
