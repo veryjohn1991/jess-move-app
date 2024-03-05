@@ -53,7 +53,7 @@ function Signin() {
                 <label className="user_input-tag">Name</label>
                 <input
                     value={userName}
-                    name="username"
+                    name="userName"
                     onChange={handleInputChange}
                     type="text"
                     placeholder="Enter your name"
