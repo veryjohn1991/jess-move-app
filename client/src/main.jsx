@@ -9,7 +9,7 @@ import Error from './pages/Error';
 import Home from './pages/Home';
 import Signin from './pages/Signin';
 import Query from './pages/Query';
-
+import Signup from './pages/Signup';
 
 
 // Define the accessible routes, and which components respond to which URL
@@ -30,11 +30,13 @@ const router = createBrowserRouter([
       {
         path: 'query',
         element: <Query />,
-      },
+      },      
       
-      
-      
-      
+      {
+        path: 'signup',
+        element: <Signup />,
+      },      
+
     ],
   },
 ]);
