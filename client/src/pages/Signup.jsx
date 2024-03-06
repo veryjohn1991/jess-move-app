@@ -1,46 +1,45 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
 
-        import { checkPassword } from '../utils/helpers';
+import Auth from '../utils/auth';
+
+       
         
-        function Signup() {
+        const  Signup = () => {
         
-            const [userName, setUserName] = useState("");
-            const [password, setPassword] = useState("");
-            const [errorMessage, setErrorMessage] = useState("");
+            const [formState, setFormState] = useState({
+               uesrname: '',
+               password: '',
+            });  
+            const [addUser, {error, data}] = useMutation(ADD_USER);
         
         
         
-        
-            const handleInputChange = (e) => {
-        
-                const { target } = e;
-                const inputType = target.name;
-                const inputValue = target.value;
-        
-                if (inputType === "userName") {
-                    setUserName(inputValue);
-                } else {
-                    setPassword(inputValue);
-        
-                }
+            const handleInputChange = (event) => {
+               const {name, value} = event.target;
+
+               setFormState({
+                ...formState,
+                [name]: value,
+               });
             };
         
-            const handleFormSubmit = (e) => {
+            const handleFormSubmit = async (e) => {
+               e.preventDefault();
+               console.log(formState);
         
-                e.preventDefault();
-        
-                if (userName === "") {
-                    setErrorMessage("Name is invalid!");
-        
-                    return;
-                }
-                if (!checkPassword(password)) {
-                    setErrorMessage('Choose a more secure password ');
-                    return;
-                }
-                setUserName('');
-                setPassword('');
+               try {
+                const {data} = await addUser({
+                    variables: { ...formState},
+                });
+
+                Auth.login(data.addUser.token);
+               } catch (e) {
+                console.error(e); 
+               }
         
             };
         
@@ -48,20 +47,25 @@ import { useState } from "react";
         
              <div className="card-container">
                 <h2>Sign Up</h2>
-
+                 <div className="card-body">
+                    {data ? (
+                        <p> Success! You may now head{' '}
+                        <Link to="/">back to the homepage.</Link>
+                        </p>
+                    ) : (
                 <form className ="form" onSubmit={handleFormSubmit}>
                     <label className="user_input-tag">User Name</label>
                     <input 
-                    value={userName}
+                    value={formState.name}
                     name="username" 
                     onChange={handleInputChange}
                     type="text"
-                    placeholder="Enter your name" 
+                    placeholder="Enter your username" 
                     />
                     <br></br>
                     <label className="password">Password</label>
                     <input
-                    value={password} 
+                    value={formState.password} 
                     type="password" 
                     name="password" 
                     onChange={handleInputChange}
@@ -71,13 +75,15 @@ import { useState } from "react";
                   <br></br>
                   <button type="submit">Sign Up</button>
                 </form>
-            
+                    )}
+
                     {errorMessage && (
                         <div>
                             <p className="error-text">{errorMessage}</p>
                         </div>
                     )}
                 </div>
+            </div>
             );
         }
         
