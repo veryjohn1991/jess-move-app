@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom';
-
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
@@ -11,7 +10,7 @@ import Auth from '../utils/auth';
         const  Signup = () => {
         
             const [formState, setFormState] = useState({
-               uesrname: '',
+               username: '',
                password: '',
             });  
             const [addUser, {error, data}] = useMutation(ADD_USER);
@@ -27,8 +26,8 @@ import Auth from '../utils/auth';
                });
             };
         
-            const handleFormSubmit = async (e) => {
-               e.preventDefault();
+            const handleFormSubmit = async (event) => {
+               event.preventDefault();
                console.log(formState);
         
                try {
@@ -36,7 +35,7 @@ import Auth from '../utils/auth';
                     variables: { ...formState},
                 });
 
-                Auth.login(data.addUser.token);
+                Auth.signin(data.addUser.token);
                } catch (e) {
                 console.error(e); 
                }
@@ -53,11 +52,11 @@ import Auth from '../utils/auth';
                         <Link to="/">back to the homepage.</Link>
                         </p>
                     ) : (
-                <form className ="form" onSubmit={handleFormSubmit}>
+                <form onSubmit={handleFormSubmit}>
                     <label className="user_input-tag">User Name</label>
                     <input 
                     value={formState.name}
-                    name="username" 
+                    name="userName" 
                     onChange={handleInputChange}
                     type="text"
                     placeholder="Enter your username" 
@@ -77,9 +76,9 @@ import Auth from '../utils/auth';
                 </form>
                     )}
 
-                    {errorMessage && (
+                    {error && (
                         <div>
-                            <p className="error-text">{errorMessage}</p>
+                            <p className="error-text">{error.Message}</p>
                         </div>
                     )}
                 </div>

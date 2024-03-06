@@ -10,7 +10,7 @@ import Auth from '../utils/auth';
 
 const Signin = (props) => {
 
-    const [formState, setFormState] = useState({password},"")
+    const [formState, setFormState] = useState({password:""})
     const [signin, {error, data}] = useMutation(SIGNIN_USER);
 
 
@@ -33,16 +33,17 @@ const Signin = (props) => {
         event.preventDefault();
         console.log(formState);
         try {
-            const {data} = await Login({
+            const {data} = await signin({
                 variables: {...formState},
             });
 
-            Auth.login(data.login.token);
+            Auth.signin(data.login.token);
         } catch (e) {
           console.error(e);
         }
 
         setFormState({
+            username: '',
             password: '',
           });
     
@@ -80,13 +81,13 @@ const Signin = (props) => {
             </form>
             )}
             
-            {errorMessage && (
+            {error && (
                 <div>
-                    <p className="error-text">{errorMessage}</p>
+                    <p className="error-text">{error.Message}</p>
                 </div>
             )}
         </div>
     );
 }
 
-export default SIGNIN_USER;
+export default Signin;
