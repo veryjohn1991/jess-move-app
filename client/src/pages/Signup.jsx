@@ -17,7 +17,7 @@ import Auth from '../utils/auth';
         
         
         
-            const handleInputChange = (event) => {
+            const handleChange = (event) => {
                const {name, value} = event.target;
 
                setFormState({
@@ -36,8 +36,8 @@ import Auth from '../utils/auth';
                 });
 
                 Auth.signin(data.addUser.token);
-               } catch (e) {
-                console.error(e); 
+               } catch (err) {
+                //console.error(err); 
                }
         
             };
@@ -55,21 +55,23 @@ import Auth from '../utils/auth';
                 <form onSubmit={handleFormSubmit}>
                     <label className="user_input-tag">User Name</label>
                     <input 
-                    value={formState.name}
-                    name="userName" 
-                    onChange={handleInputChange}
+                    className="form-input"
+                    placeholder="Enter your username"
+                    name="username" 
                     type="text"
-                    placeholder="Enter your username" 
+                    value={formState.name} 
+                    onChange={handleChange}                   
                     />
                     <br></br>
                     <label className="password">Password</label>
                     <input
-                    value={formState.password} 
-                    type="password" 
+                    className="form-input"
+                    placeholder="Enter secure password"                    
                     name="password" 
-                    onChange={handleInputChange}
-                    id="password" 
-                    placeholder="Enter secure password" />
+                    type="password" 
+                    value={formState.password} 
+                    onChange={handleChange}           
+                     />
 
                   <br></br>
                   <button type="submit">Sign Up</button>
@@ -78,13 +80,13 @@ import Auth from '../utils/auth';
 
                     {error && (
                         <div>
-                            <p className="error-text">{error.Message}</p>
+                            <div className="error-text">{error.Message}</div>
                         </div>
                     )}
                 </div>
             </div>
             );
-        }
+        };
         
         export default Signup;
        
