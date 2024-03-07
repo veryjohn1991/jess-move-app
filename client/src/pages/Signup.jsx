@@ -28,7 +28,7 @@ import Auth from '../utils/auth';
         
             const handleFormSubmit = async (event) => {
                event.preventDefault();
-               //console.log(formState);//
+               console.log(formState);
         
                try {
                 const {data} = await addUser({
