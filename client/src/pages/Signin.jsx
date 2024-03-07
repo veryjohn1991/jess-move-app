@@ -16,7 +16,7 @@ const Signin = (props) => {
 
 
 
-    const handleInputChange = (event) => {
+    const handleChange = (event) => {
 
         const { name, value } = event.target;
        
@@ -37,9 +37,9 @@ const Signin = (props) => {
                 variables: {...formState},
             });
 
-            Auth.signin(data.login.token);
+            Auth.signin(data.signin.token);
         } catch (e) {
-          console.error(e);
+         // console.error(e);
         }
 
         setFormState({
@@ -52,7 +52,7 @@ const Signin = (props) => {
     return (
 
         <div className="container text-center">
-            <h1>Sign In</h1>
+            <h1>Signin</h1>
             {data ? (
                 <p>Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
@@ -61,20 +61,22 @@ const Signin = (props) => {
             <form className="form" onSubmit={handleFormSubmit}>
                 <label className="user_input-tag">Name</label>
                 <input
-                    value={formState.userName}
-                    name="userName"
-                    onChange={handleInputChange}
-                    type="text"
+                    className="form-input"
                     placeholder="Enter your name"
+                    name="username"
+                    type="text"                  
+                    value={formState.userName}
+                    onChange={handleChange}
                 />
                 <br></br>
                 <label className="user_input-tag">Password</label>
                 <input
-                    value={formState.password}
-                    name="password"
-                    onChange={handleInputChange}
-                    type="password"
+                    className="form-input"
                     placeholder="enter password"
+                    name="password"                   
+                    type="password"                   
+                    value={formState.password}
+                    onChange={handleChange}
                 />
                 <br></br>
                 <button type="submit">Submit</button>
