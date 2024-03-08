@@ -53,7 +53,7 @@ import Auth from '../utils/auth';
                         </p>
                     ) : (
                 <form onSubmit={handleFormSubmit}>
-                    <label className="user_input-tag">User Name</label>
+                    <label className="user_name">User Name
                     <input 
                     className="form-input"
                     placeholder="Enter your username"
@@ -61,9 +61,9 @@ import Auth from '../utils/auth';
                     type="text"
                     value={formState.name} 
                     onChange={handleChange}                   
-                    />
+                    /></label>
                     <br></br>
-                    <label className="password">Password</label>
+                    <label className="password">Password
                     <input
                     className="form-input"
                     placeholder="Enter secure password"                    
@@ -71,7 +71,7 @@ import Auth from '../utils/auth';
                     type="password" 
                     value={formState.password} 
                     onChange={handleChange}           
-                     />
+                     /></label>
 
                   <br></br>
                   <button type="submit">Sign Up</button>
