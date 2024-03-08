@@ -1,11 +1,13 @@
 import { useState } from "react";
 import React from "react";
+import {useLazyQuery} from '@apollo/client';
+import {QUERY_STATEINCOME} from '../utils/queries';
 
 function Query() {
   const [stateName, setStateName] = useState("");
 
   const [errorMessage, setErrorMessage] = useState("");
-  
+  const [getStateIncome, {loading,error, data } ]= useLazyQuery(QUERY_STATEINCOME);
 
   const handleInputChange = (e) => {
     const { target } = e;
@@ -26,6 +28,7 @@ function Query() {
       return;
     }
     
+    getStateIncome({variables:{stateName}});
    
 
 
@@ -34,11 +37,11 @@ function Query() {
   };
 
   return (
-    <form>
+    <form onSubmit={handleFormSubmit}>
       <div className="page-body">
         <h1 className="heading">Search States</h1>
 
-        <div className="form" onSubmit={handleFormSubmit}>
+        <div className="form">
           <div className="user_input-div">
             <label className="user_input-tag">Name</label>
             <input
@@ -59,6 +62,7 @@ function Query() {
             </div>
           )}
         </div>
+       <p> {data?.stateincome?.stateName || ''}</p>
       </div>
     </form>
   );
