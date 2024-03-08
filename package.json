@@ -15,15 +15,6 @@
     "license": "ISC",
     "devDependencies": {
         "concurrently": "^8.2.0"
-    },
-    "dependencies": {
-
-        "axios": "^1.6.7",
-
-        "kill-port": "^2.0.1",
-        "mongodb": "^6.4.0",
-        "node": "^21.7.0",
-
-        "render": "^0.1.4"
     }
+    
 }
