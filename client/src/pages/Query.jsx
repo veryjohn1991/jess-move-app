@@ -62,7 +62,10 @@ function Query() {
             </div>
           )}
         </div>
+        
        <p> {data?.stateincome?.stateName || ''}</p>
+       <p> {data?.stateincome?.medianIncome || ''}</p>
+       
       </div>
     </form>
   );
