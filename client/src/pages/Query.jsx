@@ -43,13 +43,13 @@ function Query() {
 
         <div className="form">
           <div className="user_input-div">
-            <label className="user_input-tag">Name</label>
+            <h3 className="form-tag">State Name</h3>
             <input
               value={stateName}
               name="stateName"
               onChange={handleInputChange}
               type="text"
-              placeholder="enter state name"
+              placeholder="enter state here"
             />
           </div>
           <br></br>
