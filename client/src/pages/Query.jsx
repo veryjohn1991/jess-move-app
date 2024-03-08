@@ -12,22 +12,25 @@ function Query() {
     const inputType = target.name;
     const inputValue = target.value;
 
-    if (inputType === "Name") {
-      setUserName(inputValue);
+    if (inputType === "stateName") {
+      setStateName(inputValue);
     }
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    if (!stateName(stateName) || stateName === "") {
+    if (!stateName || stateName === "") {
       setErrorMessage("State name is invalid!");
 
       return;
     }
+    
+   
+
 
     setStateName("");
-    setPassword("");
+    //setPassword("");
   };
 
   return (
