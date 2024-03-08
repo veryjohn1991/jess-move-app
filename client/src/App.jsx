@@ -1,3 +1,4 @@
+//import { QueryClient, QueryClientProvider } from "react-query";
 import {
   ApolloClient,
   InMemoryCache,
@@ -18,7 +19,22 @@ const httpLink = createHttpLink({
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
   const token = localStorage.getItem('id_token');
+
   // return the headers to the context so httpLink can read them
+  //const queryClient = new QueryClient({
+   // defaultOptions: {
+      //queries: {
+       // refetchOnWindowFocus: false, // Disable automatic refetching on focus
+       // refetchInterval: 60000, // Refetch queries every 60 seconds
+     // },
+   // },
+ // });
+
+ //These three lines go inside the App()function!
+ //<QueryClientProvider client={queryClient}>
+ //<ExchangeRate />
+// </QueryClientProvider>  
+
   return {
     headers: {
       ...headers,
@@ -40,6 +56,7 @@ function App() {
       <ApolloProvider client={client}>
       <Header />
       <div className="container">
+     
       <Outlet />
       </div>
       <Footer />

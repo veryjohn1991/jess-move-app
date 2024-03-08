@@ -4,9 +4,15 @@ export const QUERY_USER = gql`
 query user($username: String!) {
 user(username: $username) {
     username
-    password {
-
-    }
+     
   } 
 }
 `;
+export const QUERY_STATEINCOME=gql`
+query stateincome ($stateName: String!){
+  stateincome(stateName: $stateName){
+    stateName
+    medianIncome
+  }
+}
+`
