@@ -11,7 +11,7 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username })
     },
-    medianIncome: async (parent,{stateName})=>{
+    stateincome: async (parent,{stateName})=>{
       try {
        const stateIncome = await getMedianIncome('2022');
        //const stateNameArray = stateIncome.map(state=>{
@@ -29,7 +29,7 @@ const resolvers = {
        } else {
         return {
           stateName : filterState[0][0],
-          stateIncome: filterState[0][1]
+          medianIncome: filterState[0][1]
         }
         
        }

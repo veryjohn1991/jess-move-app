@@ -11,9 +11,15 @@ const typeDefs = `
     user: User
   }
 
+  type StateIncomeType {
+    stateName: String
+    medianIncome: String
+  }
+
   type Query {
     users: [User]
     user(username: String!): User
+    stateincome(stateName: String!): StateIncomeType
   }
 
   type Mutation {
