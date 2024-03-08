@@ -59,25 +59,27 @@ const Signin = (props) => {
                 </p>
             ) : (
             <form className="form" onSubmit={handleFormSubmit}>
-                <label className="user_input-tag">Name</label>
+                <label className="user_name">Name
                 <input
                     className="form-input"
                     placeholder="Enter your name"
+                    autoComplete="given-name"
                     name="username"
                     type="text"                  
                     value={formState.userName}
                     onChange={handleChange}
-                />
+                /></label>
                 <br></br>
-                <label className="user_input-tag">Password</label>
+                <label className="password">Password
                 <input
                     className="form-input"
                     placeholder="enter password"
+                    autoComplete="new-password"
                     name="password"                   
                     type="password"                   
                     value={formState.password}
                     onChange={handleChange}
-                />
+                /></label>
                 <br></br>
                 <button type="submit">Submit</button>
             </form>
