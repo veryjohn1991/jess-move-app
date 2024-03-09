@@ -7,11 +7,11 @@ const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-   
+  
     <footer className="w-100 mt-auto text-dark p-4">
       <div className="footer-container text-center">
         
-     
+          <br></br>
           <button
             className="btn btn-dark mb-5"
             onClick={() => navigate(-1)}
