@@ -7,21 +7,16 @@ const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-   
-    <footer className="w-100 mt-auto text-dark p-4">
-      <div className="footer-container text-center">
+  
+    <footer>
+      <div className="footer-container">
         
-     
+          <br></br>
           <button
-            className="btn btn-dark mb-5"
+            className="btn"
             onClick={() => navigate(-1)}
-          >
-            &larr; Go Back
-          </button>
-          
-        
-        <br></br>
-        <h4>jess move © 2024</h4>
+          >Go Back</button>
+        <h3>jess move © 2024</h3>
       </div>
     </footer>
   
