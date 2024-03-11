@@ -1,14 +1,15 @@
 header {
-    background-color: #768948 ;
-    color: black;
+    background-color: #5052c1 ;
+    color: rgb(245, 194, 67);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    height: 65px;
 }
   
 
-.nav{
+.nav {
   width: 50%;
 
 }

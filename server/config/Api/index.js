@@ -16,7 +16,7 @@ const getMedianIncome= async function(year){
     console.log(result);
     return result;
 
-    }catch (error){
+    } catch (error){
         console.log(error);
         throw new Error(error);
     };

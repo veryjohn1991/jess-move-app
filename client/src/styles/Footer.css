@@ -1,3 +1,29 @@
-h4 {
-    color: white;
+h3 {
+    color: rgb(237, 243, 238);
+    text-align: center;
+    background-color: rgb(14, 11, 187);
+    height: 30px;
+    padding-top: 20px;
+    margin-top: 0px;
+    padding-bottom: 20px;
+   
+}
+.footer-container {
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(14, 11, 187);
+    height: 1px;
+    padding-top: 70px;
+    padding-bottom: 30px;
+
+}
+button {
+    background-color: black;
+    color: beige;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 10;
+    
+
 }
