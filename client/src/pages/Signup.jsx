@@ -49,9 +49,9 @@ const Signup = () => {
               className="form-input"
               autoComplete="name"
               placeholder="Enter your username"
-              name="name"
+              name="username"
               type="text"
-              value={formState.name}
+              value={formState.username}
               onChange={handleChange}
             />
             <br></br>
