@@ -73,10 +73,10 @@ The application is accessible on various devices and screen sizes.
 4. Mark your attendance for events and view the list of events you are attending.
 
 ## Deployed Herok Application Link:
-[Deployed Heroku Application Link:](https://jdt-events.herokuapp.com/)
+[Deployed Heroku Application Link:](https://jess-move-app.onrender.com/)
 
 ## GitHub Repository:
-[GitHub Repository:](https://github.com/ThomasCalle/UTOR-PROJECT-03)
+[GitHub Repository:](https://github.com/veryjohn1991/jess-move-app)
 
 
 ## Screenshots:
