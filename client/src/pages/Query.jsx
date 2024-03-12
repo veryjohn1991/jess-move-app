@@ -1,14 +1,14 @@
 import { useState } from "react";
 import React from "react";
-import {useLazyQuery} from '@apollo/client';
-import {QUERY_STATEINCOME} from '../utils/queries';
+import { useLazyQuery } from '@apollo/client';
+import { QUERY_STATEINCOME } from '../utils/queries';
 import '../styles/Query.css'
 
 function Query() {
   const [stateName, setStateName] = useState("");
 
   const [errorMessage, setErrorMessage] = useState("");
-  const [getStateIncome, {loading,error, data } ]= useLazyQuery(QUERY_STATEINCOME);
+  const [getStateIncome, { loading, error, data }] = useLazyQuery(QUERY_STATEINCOME);
 
   const handleChange = (e) => {
     const { target } = e;
@@ -28,9 +28,9 @@ function Query() {
 
       return;
     }
-    
-    getStateIncome({variables:{stateName}});
-   
+
+    getStateIncome({ variables: { stateName } });
+
 
 
     setStateName("");
@@ -55,10 +55,10 @@ function Query() {
             />
           </div>
           <br></br>
-          <button 
-          className="bg btn-primary "
-          style={{ cursor: "pointer" }}
-          type="submit" >
+          <button
+            className="bg btn-primary "
+            style={{ cursor: "pointer" }}
+            type="submit" >
             Submit
           </button>{" "}
           <br></br>
@@ -69,12 +69,18 @@ function Query() {
           )}
         </div>
         <div>
-       <p>State: {data?.stateincome?.stateName || ''}
-       <br></br>
-       <br></br>
+          {loading?
+          <>
+          <p>Fetching.</p>
+          </>:
+          <>
+            <p>State: {data?.stateincome?.stateName || ''}
+              <br></br>
+              <br></br>
 
-        Median Income:  {data?.stateincome?.medianIncome || ''}</p>
-       </div>
+              Median Income:  {data?.stateincome?.medianIncome || ''}</p>
+          </>}
+        </div>
       </div>
     </form>
   );
