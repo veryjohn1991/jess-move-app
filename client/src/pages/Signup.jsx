@@ -1,93 +1,89 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
+import "../styles/Signup.css";
+import Auth from "../utils/auth";
 
-import Auth from '../utils/auth';
+const Signup = () => {
+  const [formState, setFormState] = useState({
+    username: "",
+    password: "",
+  });
 
-       
-        
-        const  Signup = () => {
-        
-            const [formState, setFormState] = useState({
-               username: '',
-               password: '',
-            });  
-            const [addUser, {error, data}] = useMutation(ADD_USER);
-        
-        
-        
-            const handleChange = (event) => {
-               const {name, value} = event.target;
+  const [addUser, { error, data }] = useMutation(ADD_USER);
 
-               setFormState({
-                ...formState,
-                [name]: value,
-               });
-            };
-        
-            const handleFormSubmit = async (event) => {
-               event.preventDefault();
-               console.log(formState);
-        
-               try {
-                const {data} = await addUser({
-                    variables: { ...formState},
-                });
+  //updating form state to reflect user input
 
-                Auth.signin(data.addUser.token);
-               } catch (err) {
-                //console.error(err); 
-               }
-        
-            };
-        
-            return (
-        
-             <div className="card-container">
-                <h2>Sign Up</h2>
-                 <div className="card-body">
-                    {data ? (
-                        <p> Success! You may now head{' '}
-                        <Link to="/">back to the homepage.</Link>
-                        </p>
-                    ) : (
-                <form onSubmit={handleFormSubmit}>
-                    <label className="user_input-tag">User Name</label>
-                    <input 
-                    className="form-input"
-                    placeholder="Enter your username"
-                    name="username" 
-                    type="text"
-                    value={formState.name} 
-                    onChange={handleChange}                   
-                    />
-                    <br></br>
-                    <label className="password">Password</label>
-                    <input
-                    className="form-input"
-                    placeholder="Enter secure password"                    
-                    name="password" 
-                    type="password" 
-                    value={formState.password} 
-                    onChange={handleChange}           
-                     />
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-                  <br></br>
-                  <button type="submit">Sign Up</button>
-                </form>
-                    )}
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+  //preventing page refresh (default) on form submit
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
 
-                    {error && (
-                        <div>
-                            <div className="error-text">{error.Message}</div>
-                        </div>
-                    )}
-                </div>
-            </div>
-            );
-        };
-        
-        export default Signup;
-       
-    
+    try {
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+
+      Auth.signin(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  return (
+    <form onSubmit={handleFormSubmit}>
+      <div className="page-body">
+        <h1 className="heading">Sign Up</h1>
+        <div className="form">
+          <div className="user_input-div">
+            <h3 className="form-tag">Name</h3>
+            <input
+              className="form-input"
+              autoComplete="name"
+              placeholder="Enter your username"
+              name="username"
+              type="text"
+              value={formState.username}
+              onChange={handleChange}
+            />
+            <br></br>
+            <h3 className="form-tag">Password</h3>
+            <input
+              className="form-input"
+              autoComplete="off"
+              placeholder="Enter secure password"
+              name="password"
+              type="password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+            <br></br>
+            <button
+              className="btn btn-primary"
+              style={{ cursor: "pointer" }}
+              type="submit"
+            >
+              Submit
+            </button>
+            <br></br>
+            {error && (
+              <div>
+                <p className="error-text">{error.Message}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </form>
+  );
+};
+
+export default Signup;

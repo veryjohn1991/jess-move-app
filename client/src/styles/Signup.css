@@ -1,0 +1,39 @@
+h3 {
+    margin: 0px;
+}
+.form-tag {
+    background-color:  rgb(93, 116, 209);
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.button {
+    margin-top: 5px;
+    margin-bottom: 80px;
+    text-decoration: none;
+    color: black;
+}
+.container {
+    background-color:  rgb(93, 116, 209);
+    padding: 0%;
+    margin: 0px;
+
+}
+.heading {
+    background-color: rgb(93, 116, 209);
+    padding: 0px;
+    margin-top: 0%;
+    color: black;
+}
+.page-body {
+    padding: 0px; 
+    align-items: center;
+    text-align: center;
+}
+.form {
+    padding: 0px;
+  
+}
+.form-input {
+    margin-top: 5px;
+}

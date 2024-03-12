@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-
+import '../styles/Nav.css'
+import auth from "../utils/auth";
 // Here we are using object destructuring assignment to pluck off our variables from the props object
 // We assign them to their own variable names
 function Nav() {
@@ -19,6 +20,21 @@ function Nav() {
       </li>
       <li className="nav-item">
         <Link
+          to="/Query"
+          // Check to see if the currentPage is `Query`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+          className={currentPage === "/Query" ? "nav-link active" : "nav-link"}
+        >
+          State Data
+        </Link>
+      </li>
+      {auth.signedIn() ? (
+        <li className="nav-item">
+          <button onClick={() => auth.signout()}>logout</button>
+        </li>
+      ) : (
+        <>
+      <li className="nav-item">
+        <Link
           to="/Signin"
           // Check to see if the currentPage is `Signin`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
           className={currentPage === "/Signin" ? "nav-link active" : "nav-link"}
@@ -28,24 +44,16 @@ function Nav() {
       </li>
       <li className="nav-item">
         <Link
-          to="/Query"
-          // Check to see if the currentPage is `Query`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-          className={
-            currentPage === "/Query" ? "nav-link active" : "nav-link"
-          }
-        >
-          State Data
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
           to="/Signup"
           // Check to see if the currentPage is `Signin`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-          className={currentPage === "/Signup" ? "nav-link active" : "nav-link"}
+          className={
+            currentPage === "/Signup" ? "nav-link active" : "nav-link"}
         >
           Signup
         </Link>
       </li>
+      </>
+      )}
     </ul>
   );
 }

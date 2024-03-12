@@ -1,0 +1,30 @@
+.form-tag {
+    background-color: rgb(144, 130, 193);
+    color: black;
+    margin-top: 10px;
+    padding: 0px;
+    height: 10px;
+}
+
+.heading {
+    background-color: rgb(144, 130, 193);
+    padding: 10px;
+    margin-top: 20px;
+    color: black;
+}
+.button {
+    margin-bottom: 5px;
+    margin-top: 5px;
+   
+}
+.container {
+    background-color: rgb(144, 130, 193);
+    padding: 0px;
+    margin: 0px;
+}
+
+p {
+    margin-bottom: 0px;
+    padding-bottom: 25px;
+    padding-top: 0px;
+}
