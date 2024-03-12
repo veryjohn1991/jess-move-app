@@ -17,6 +17,7 @@
     background-color: rgb(144, 130, 193);
     padding: 0px;
     margin: 0px;
+    height: 300px;
 
 }
 .heading {
@@ -33,7 +34,7 @@
    ;
 }
 form {
-    padding: 0px;
+    padding: 25px;
 }
 .form-input {
     margin-top: 0px;
