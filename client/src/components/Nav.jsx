@@ -28,10 +28,10 @@ function Nav() {
         </Link>
       </li>
       {auth.signedIn() ? (
-        <li className="nav-item">
-          <button onClick={() => auth.signout()}>logout</button>
-        </li>
-      ) : (
+        <li >
+       <Link className="logout"   onClick={() => auth.signout()}>Logout</Link>
+        </li> 
+        ) : (
         <>
       <li className="nav-item">
         <Link
