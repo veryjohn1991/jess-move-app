@@ -1,6 +1,4 @@
-# jess-move-app PROJECT-03 by John, Vikas, Rony and David
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# jess-move-app 
 
 ## Description.
 
@@ -12,10 +10,7 @@ Welcome to the Jess Move App, A helpfull applicaton for customers who intend to 
 - [Overview](#Overview)
 - [The Challenge](#The-Challenge)
 - [Usage Information](#Usage-Information)
-- [Installation Process](#Installation-Process)
 - [Built With](#Built-With)
-- [What I Learned](#What-I-Learned)
-- [Continued Development](#Continued-Development)
 - [License](#License)
 - [Author](#Author)
 - [Acknowledgments](#Acknowledgments)
@@ -45,11 +40,9 @@ I want to be able to sign up, log in, and log out of the application securely.
 I want to search data related to income in specific areas.
 ```
 
-## images:
-### Figure 1. image.
+#### Video recording screenshot
+![image](https://github.com/veryjohn1991/jess-move-app/assets/138143340/bad0df34-9ca6-411a-ab71-b48c50141253)
 
-#### The following animation demonstrates the application functionality:(Coming Soon)
-![](./client/src/assets/images/JDT_EventWorker.GIF)
 
 ## Usage Instructions:
 1. Sign up or log in to access the Jess move application securely.
@@ -65,17 +58,8 @@ I want to search data related to income in specific areas.
 
 
 ## Screenshots:
-### Figure 1. WIREFRAME Screenshot.
-![](enter path here)
-
-## Screenshots:
-### Figure 2. Deployed Application Screenshot.
-![](enter path here)
-
-## Installation Process:
-1. Clone the Repository from GitHub (or) Download Zip Folder from Repository from GitHub.
-2. Open the cloned (or downloaded) repository in any source code editor.
-3. Open the integrated terminal of the document and complete the respective installation guides provided in "Built With" to ensure the cloned documentation will operate.
+###  Deployed Application Screenshot.
+![image](https://github.com/veryjohn1991/jess-move-app/assets/138143340/6d397647-8410-4669-a3b0-1755ddd75eea)
 
 ## Built With:
 - JSON: [JSON](https://www.npmjs.com/package/json)
@@ -99,47 +83,12 @@ I want to search data related to income in specific areas.
 - License Badge: [Shields.io](https://shields.io/)
 - Visual Studio Code: [Website](https://code.visualstudio.com/)
 
-## What I Learned:
-1. How to build a full-stack application using the MERN stack (MongoDB, Express, React, and Node.js).
-2. Implementing a GraphQL API with a Node.js and Express.js server.
-3. Utilizing MongoDB  for database management .
-4. Implemented user authentication using JWT.
-5. Deploying a full MERN stack application on render.
-
-### Continued Development:
-1. Intellect, Discipline & Strength.
-2. Improve the user interface and user experience with more advanced design and functionality.
-3. Add a feature to allow users to create private events, which are accessible only to invited attendees.
-4. Implement real-time notifications for event updates and reminders.
-5. Integrate a map view to display the location of events.
-6. Add social media sharing functionality to promote events.
-7. Implement event ratings and reviews.
 
 
 ## License & Copyright ©
   
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [Open Source Initiative Link](https://opensource.org/licenses/MIT)
 
-### Copyright © 2023  [David](https://github.com/devarsh2395) ,[John](https://github.com/veryjohn1991),[Rony](https://github.com/510rrl)& [Vikas](https://github.com/vikasjonathan)
-```md
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
 
 ## Author
 
@@ -148,3 +97,6 @@ Follow me on Github at  [David Melendez](https://github.com/Dmelz11) ,[Very John
 Until next time, have an amazing day.
 
 © 2023  [David Melendez](https://github.com/Dmelz11) ,[Very John](https://github.com/veryjohn1991),[Rony Lopez](https://github.com/510rrl)& [Vikas Jonathan](https://github.com/vikasjonathan) All Rights Reserved.
+
+## Acknowledgments
+To build this application we have used the 21 Mern Class Assignments using resolvers,typedefs. activity 26, We have used 20 react activity 23 and 24. We had help from Clarence our TA for the 3rd party call and retreving the data. and luigi Campbell was a great source of inspiration and helped in the getting the structue started. We also had help from our tutors who guided us in the project.
