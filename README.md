@@ -143,8 +143,8 @@ SOFTWARE.
 
 ## Author
 
-Follow me on Github at  [David Melendez](https://github.com/devarsh2395) ,[Very John](https://github.com/veryjohn1991),[Rony Lopez](https://github.com/510rrl)& [Vikas Jonathan](https://github.com/vikasjonathan). Additional questions or concerns? feel free to contact us.
+Follow me on Github at  [David Melendez](https://github.com/Dmelz11) ,[Very John](https://github.com/veryjohn1991),[Rony Lopez](https://github.com/510rrl)& [Vikas Jonathan](https://github.com/vikasjonathan). Additional questions or concerns? feel free to contact us.
 
 Until next time, have an amazing day.
 
-© 2023  [David Melendez](https://github.com/devarsh2395) ,[Very John](https://github.com/veryjohn1991),[Rony Lopez](https://github.com/510rrl)& [Vikas Jonathan](https://github.com/vikasjonathan) All Rights Reserved.
+© 2023  [David Melendez](https://github.com/Dmelz11) ,[Very John](https://github.com/veryjohn1991),[Rony Lopez](https://github.com/510rrl)& [Vikas Jonathan](https://github.com/vikasjonathan) All Rights Reserved.
