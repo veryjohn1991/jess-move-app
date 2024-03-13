@@ -1,4 +1,4 @@
-# jess-move-app PROJECT-03 by John, Vikas,Rony and David
+# jess-move-app PROJECT-03 by John, Vikas, Rony and David
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -26,7 +26,7 @@ Welcome to the Jess Move App, A helpfull applicaton for customers who intend to 
 
 ## The Challenge
 
-The challenge for our team was to develop a comprehensive event management application that offers a user-friendly interface and extensive functionality. The application needed to enable users to signup and sign in their individual accounts for data search that will help in migration . Our application ensures a seamless user experience, offering secure, responsive, and accessible features across various devices and screen sizes.
+The challenge for our team was to develop a comprehensive event management application that offers a user-friendly interface and extensive functionality. The application needed to enable users to signup and sign in their individual accounts for data search that will help in migration. Our application ensures a seamless user experience, offering secure, responsive, and accessible features across various devices and screen sizes.
 
 Our objectives for this challenge were as follows:
 
@@ -36,7 +36,7 @@ Our objectives for this challenge were as follows:
 4. Provide feature for users accurate data income based on most recent cencus.
 5. Ensure that the application is responsive and accessible on various devices and screen sizes.
 
-Addressing these objectives, our teame delivered an application  platform that met the needs of families intend to move , thus streamlining the event planning and participation process.
+Addressing these objectives, our team delivered an application platform that met the needs of families whom intend to move, thus, streamlining the event planning and participation process.
 
 
 ## Assigned User Story:
@@ -145,6 +145,6 @@ SOFTWARE.
 
 Follow me on Github at  [David Melendez](https://github.com/devarsh2395) ,[Very John](https://github.com/veryjohn1991),[Rony Lopez](https://github.com/510rrl)& [Vikas Jonathan](https://github.com/vikasjonathan). Additional questions or concerns? feel free to contact us.
 
-Until next, Have a good Day.
+Until next time, have an amazing day.
 
 © 2023  [David Melendez](https://github.com/devarsh2395) ,[Very John](https://github.com/veryjohn1991),[Rony Lopez](https://github.com/510rrl)& [Vikas Jonathan](https://github.com/vikasjonathan) All Rights Reserved.
